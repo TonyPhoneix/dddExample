@@ -10,6 +10,8 @@ import com.bixin.ddd.domain.user.UserProfile;
  */
 public interface UserProfileGateway {
     public void create(UserProfile userProfile);
+
     public void update(UserProfile userProfile);
+
     public UserProfile getByUserId(String userId);
 }

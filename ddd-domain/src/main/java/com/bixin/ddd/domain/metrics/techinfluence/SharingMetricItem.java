@@ -2,8 +2,8 @@ package com.bixin.ddd.domain.metrics.techinfluence;
 
 import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
-import com.bixin.ddd.domain.metrics.MetricItem;
 import com.alibaba.fastjson.JSON;
+import com.bixin.ddd.domain.metrics.MetricItem;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,6 +11,7 @@ import java.util.Date;
 /**
  * SharingMetricItem
  * 技术线下分享指标项
+ *
  * @author Frank Zhang
  * @date 2018-07-04 3:20 PM
  */
@@ -24,7 +25,7 @@ public class SharingMetricItem extends MetricItem {
     private Date sharingDate;
     private String sharingLink;
 
-    public SharingMetricItem(){
+    public SharingMetricItem() {
 
     }
 
@@ -35,7 +36,7 @@ public class SharingMetricItem extends MetricItem {
         this.sharingLink = url;
     }
 
-    public static SharingMetricItem valueOf(String json){
+    public static SharingMetricItem valueOf(String json) {
         return JSON.parseObject(json, SharingMetricItem.class);
     }
 

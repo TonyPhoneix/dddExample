@@ -3,9 +3,9 @@ package com.bixin.ddd.domain.metrics.weight;
 /**
  * 非技术人员不需要考核
  */
-public class OtherWeight extends Weight{
+public class OtherWeight extends Weight {
 
-    public static OtherWeight singleton= new OtherWeight();
+    public static OtherWeight singleton = new OtherWeight();
 
     @Override
     public double getAppQualityWeight() {

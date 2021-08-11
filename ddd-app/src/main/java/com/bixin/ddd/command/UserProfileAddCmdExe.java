@@ -2,9 +2,9 @@ package com.bixin.ddd.command;
 
 import com.alibaba.cola.dto.Response;
 import com.bixin.ddd.convertor.UserProfileConvertor;
+import com.bixin.ddd.domain.gateway.UserProfileGateway;
 import com.bixin.ddd.domain.user.UserProfile;
 import com.bixin.ddd.dto.UserProfileAddCmd;
-import com.bixin.ddd.domain.gateway.UserProfileGateway;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * @date 2019-02-28 6:25 PM
  */
 @Component
-public class UserProfileAddCmdExe{
+public class UserProfileAddCmdExe {
 
     @Resource
     private UserProfileGateway userProfileGateway;

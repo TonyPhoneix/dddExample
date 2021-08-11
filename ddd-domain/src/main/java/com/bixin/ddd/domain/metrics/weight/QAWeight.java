@@ -3,9 +3,9 @@ package com.bixin.ddd.domain.metrics.weight;
 /**
  * 测试的分数权重占比
  */
-public class QAWeight extends Weight{
+public class QAWeight extends Weight {
 
-    public static QAWeight singleton= new QAWeight();
+    public static QAWeight singleton = new QAWeight();
 
     @Override
     public double getAppQualityWeight() {

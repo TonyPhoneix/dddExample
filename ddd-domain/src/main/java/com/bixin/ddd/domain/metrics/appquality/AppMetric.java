@@ -5,7 +5,7 @@ import com.bixin.ddd.domain.metrics.SubMetricType;
 
 public class AppMetric extends SubMetric {
 
-    public AppMetric(){
+    public AppMetric() {
         this.subMetricType = SubMetricType.App;
     }
 
@@ -17,10 +17,10 @@ public class AppMetric extends SubMetric {
     @Override
     public double calculateScore() {
         int appCount = super.getMetricItemList().size();
-        if (appCount == 0){
+        if (appCount == 0) {
             return 0;
         }
         double sumScore = super.calculateScore();
-        return sumScore/appCount;
+        return sumScore / appCount;
     }
 }

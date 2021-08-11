@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class UserProfileListQryExe{
+public class UserProfileListQryExe {
 
     @Resource
     private UserProfileMapper userProfileMapper;

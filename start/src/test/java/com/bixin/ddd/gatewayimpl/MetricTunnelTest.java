@@ -20,7 +20,7 @@ public class MetricTunnelTest {
     @Autowired
     private MetricMapper metricMapper;
 
-    public void testCRUD(){
+    public void testCRUD() {
         String userId = "MetricTunnelTest" + Math.random();
         MetricDO metricDO = new MetricDO();
         metricDO.setMainMetric(MainMetricType.TECH_INFLUENCE.getMetricCode());
@@ -33,7 +33,7 @@ public class MetricTunnelTest {
         List<MetricDO> metricDOS = metricMapper.listByUserId(userId);
         Assert.assertEquals(1, metricDOS.size());
 
-        metricMapper.delete(metricDOS.get(0).getId(),"MetricTunnelTest");
+        metricMapper.delete(metricDOS.get(0).getId(), "MetricTunnelTest");
         Assert.assertEquals(0, metricMapper.listByUserId(userId).size());
     }
 }

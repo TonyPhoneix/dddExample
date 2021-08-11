@@ -13,7 +13,7 @@ import org.junit.Test;
 public class ContextInterceptorTest {
 
     @Test
-    public void testNoOperatorContext(){
+    public void testNoOperatorContext() {
         UserProfileAddCmd userProfileAddCmd = new UserProfileAddCmd();
         userProfileAddCmd.setUserProfileCO(new UserProfileCO());
 
@@ -22,7 +22,7 @@ public class ContextInterceptorTest {
     }
 
     @Test
-    public void testOperatorContext(){
+    public void testOperatorContext() {
         UserProfileAddCmd userProfileAddCmd = new UserProfileAddCmd();
         userProfileAddCmd.setUserProfileCO(new UserProfileCO());
         userProfileAddCmd.setOperater("Frank");

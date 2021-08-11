@@ -1,12 +1,8 @@
 package com.bixin.ddd.domain.metrics.techinfluence;
 
-import com.bixin.ddd.domain.metrics.MetricItem;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.bixin.ddd.domain.metrics.MetricItem;
 import lombok.Data;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * PaperMetricItem
@@ -17,30 +13,30 @@ import java.util.Map;
 @Data
 public class PaperMetricItem extends MetricItem {
 
-	private String paperName;
-	private String paperDesc;
-	private String magazine;
-	private String paperLink;
+    private String paperName;
+    private String paperDesc;
+    private String magazine;
+    private String paperLink;
 
-	private static final double PAPER_SCORE = 10;
+    private static final double PAPER_SCORE = 10;
 
-	public PaperMetricItem(){
+    public PaperMetricItem() {
 
-	}
+    }
 
-	public PaperMetricItem(String paperName, String paperDesc, String magazine, String paperLink) {
-		this.paperName = paperName;
-		this.paperDesc = paperDesc;
-		this.magazine = magazine;
-		this.paperLink = paperLink;
-	}
+    public PaperMetricItem(String paperName, String paperDesc, String magazine, String paperLink) {
+        this.paperName = paperName;
+        this.paperDesc = paperDesc;
+        this.magazine = magazine;
+        this.paperLink = paperLink;
+    }
 
-	public static PaperMetricItem valueOf(String json){
-		return JSON.parseObject(json, PaperMetricItem.class);
-	}
+    public static PaperMetricItem valueOf(String json) {
+        return JSON.parseObject(json, PaperMetricItem.class);
+    }
 
-	@Override
-	public double calculateScore() {
-		return PAPER_SCORE;
-	}
+    @Override
+    public double calculateScore() {
+        return PAPER_SCORE;
+    }
 }

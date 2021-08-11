@@ -3,13 +3,13 @@ package com.bixin.ddd.domain.metrics.weight;
 /**
  * 开发的总分计算权重
  */
-public class DevWeight extends Weight{
+public class DevWeight extends Weight {
 
-    public static DevWeight singleton= new DevWeight();
+    public static DevWeight singleton = new DevWeight();
 
     @Override
     public double getAppQualityWeight() {
-        return  20 / WEIGHT_PERCENTAGE;
+        return 20 / WEIGHT_PERCENTAGE;
     }
 
     @Override

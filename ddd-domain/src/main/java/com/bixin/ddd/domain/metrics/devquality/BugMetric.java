@@ -1,6 +1,7 @@
 package com.bixin.ddd.domain.metrics.devquality;
 
-import com.bixin.ddd.domain.metrics.*;
+import com.bixin.ddd.domain.metrics.SubMetric;
+import com.bixin.ddd.domain.metrics.SubMetricType;
 import com.bixin.ddd.domain.user.Role;
 
 
@@ -9,7 +10,7 @@ import com.bixin.ddd.domain.user.Role;
  */
 public class BugMetric extends SubMetric {
 
-    public BugMetric(){
+    public BugMetric() {
         this.subMetricType = SubMetricType.Bug;
     }
 
@@ -20,7 +21,7 @@ public class BugMetric extends SubMetric {
 
     @Override
     public double calculateScore() {
-        if(metricOwner.getRole() == Role.OTHER){
+        if (metricOwner.getRole() == Role.OTHER) {
             return 0;
         }
         return super.calculateScore();

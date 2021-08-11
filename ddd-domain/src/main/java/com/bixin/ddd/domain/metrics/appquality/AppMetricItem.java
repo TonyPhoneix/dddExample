@@ -15,8 +15,8 @@ public class AppMetricItem extends MetricItem {
     private int longMethodCount;//长方法的数目
     private int blockedCodeConductCount;//不符合编码标准的数目
 
-    private static final int FULL_SCORE=100;
-    private static final int STEP_SIZE=10;
+    private static final int FULL_SCORE = 100;
+    private static final int STEP_SIZE = 10;
     private static final int STEP_MINUS_SCORE = 1;
 
     @Override
@@ -26,7 +26,7 @@ public class AppMetricItem extends MetricItem {
         score = duductScore(score, duplicatedMethodCount);
         score = duductScore(score, longMethodCount);
         score = duductScore(score, blockedCodeConductCount);
-        logger.debug("Calculated App score is "+score );
+        logger.debug("Calculated App score is " + score);
         return score;
     }
 

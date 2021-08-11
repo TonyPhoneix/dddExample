@@ -14,7 +14,7 @@ import javax.annotation.Resource;
  * @date 2019-03-04 3:01 PM
  */
 @Component
-public class MetricDeleteCmdExe{
+public class MetricDeleteCmdExe {
 
     @Resource
     private MetricMapper metricMapper;

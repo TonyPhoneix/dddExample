@@ -11,7 +11,7 @@ import lombok.Getter;
 public enum RefactoringLevel {
 
     METHOD(2, "方法级别的重构"),
-    MODULE( 4, "模块级别的重构（多个方法和类的重构）"),
+    MODULE(4, "模块级别的重构（多个方法和类的重构）"),
     PROJECT(10, "项目级别的重构（超过3个人日的重构项目）");
 
 

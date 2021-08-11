@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  * @date 2019-03-01 11:41 AM
  */
 @Service
-public class MetricsServiceImpl implements MetricsServiceI{
+public class MetricsServiceImpl implements MetricsServiceI {
 
     @Resource
     private ATAMetricAddCmdExe ataMetricAddCmdExe;
@@ -52,22 +52,22 @@ public class MetricsServiceImpl implements MetricsServiceI{
 
     @Override
     public Response addPatentMetric(PatentMetricAddCmd cmd) {
-        return  patentMetricAddCmdExe.execute(cmd);
+        return patentMetricAddCmdExe.execute(cmd);
     }
 
     @Override
     public Response addPaperMetric(PaperMetricAddCmd cmd) {
-        return  paperMetricAddCmdExe.execute(cmd);
+        return paperMetricAddCmdExe.execute(cmd);
     }
 
     @Override
     public Response addRefactoringMetric(RefactoringMetricAddCmd cmd) {
-        return  refactoringMetricAddCmdExe.execute(cmd);
+        return refactoringMetricAddCmdExe.execute(cmd);
     }
 
     @Override
     public Response addMiscMetric(MiscMetricAddCmd cmd) {
-        return  miscMetricAddCmdExe.execute(cmd);
+        return miscMetricAddCmdExe.execute(cmd);
     }
 
     @Override

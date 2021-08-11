@@ -5,6 +5,7 @@ import lombok.Getter;
 /**
  * SharingScope
  * 线下分享的范围，范围不同，分值不同
+ *
  * @author Frank Zhang
  * @date 2018-07-04 3:25 PM
  */

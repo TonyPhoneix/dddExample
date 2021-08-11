@@ -16,25 +16,25 @@ import org.junit.Test;
 public class ATAMetricTest {
 
     @Test
-    public void testBasicScore(){
-        ATAMetricItem ataMetricItem = new ATAMetricItem("article",19,99,14,2) ;
+    public void testBasicScore() {
+        ATAMetricItem ataMetricItem = new ATAMetricItem("article", 19, 99, 14, 2);
         Assert.assertEquals(0.5, ataMetricItem.calculateScore(), 0.01);
     }
 
     @Test
-    public void testNormalScore(){
-        ATAMetricItem ataMetricItem = new ATAMetricItem("article",20,100,15,3) ;
+    public void testNormalScore() {
+        ATAMetricItem ataMetricItem = new ATAMetricItem("article", 20, 100, 15, 3);
         Assert.assertEquals(1.5, ataMetricItem.calculateScore(), 0.01);
     }
 
     @Test
-    public void testPopularScore(){
-        ATAMetricItem ataMetricItem = new ATAMetricItem("article",100, 500, 75, 15) ;
+    public void testPopularScore() {
+        ATAMetricItem ataMetricItem = new ATAMetricItem("article", 100, 500, 75, 15);
         Assert.assertEquals(5.5, ataMetricItem.calculateScore(), 0.01);
     }
 
     @Test
-    public void testJSON(){
+    public void testJSON() {
         ATAMetricItem ataMetricItem = new ATAMetricItem();
         ataMetricItem.setTitle("title");
         ataMetricItem.setUrl("sharingLink");
@@ -54,11 +54,11 @@ public class ATAMetricTest {
     }
 
     @Test
-    public void testATAMetric(){
+    public void testATAMetric() {
         ATAMetric ataMetric = new ATAMetric(new InfluenceMetric(new UserProfile()));
-        ataMetric.addMetricItem( new ATAMetricItem("article",19,99,14,2));
-        ataMetric.addMetricItem( new ATAMetricItem("article",20,100,15,3) );
-        ataMetric.addMetricItem( new ATAMetricItem("article",100, 500, 75, 15) );
+        ataMetric.addMetricItem(new ATAMetricItem("article", 19, 99, 14, 2));
+        ataMetric.addMetricItem(new ATAMetricItem("article", 20, 100, 15, 3));
+        ataMetric.addMetricItem(new ATAMetricItem("article", 100, 500, 75, 15));
         Assert.assertEquals(7.5, ataMetric.calculateScore(), 0.01);
     }
 }

@@ -10,7 +10,7 @@ public class DevQualityMetric extends MainMetric {
 
     private BugMetric bugMetric;
 
-    public DevQualityMetric(UserProfile metricOwner){
+    public DevQualityMetric(UserProfile metricOwner) {
         this.metricOwner = metricOwner;
         metricOwner.setDevQualityMetric(this);
         this.metricMainType = MainMetricType.DEV_QUALITY;

@@ -22,7 +22,7 @@ import javax.annotation.Resource;
  * @date 2019-02-28 6:22 PM
  */
 @Service
-public class UserProfileServiceImpl implements UserProfileServiceI{
+public class UserProfileServiceImpl implements UserProfileServiceI {
     @Resource
     private UserProfileAddCmdExe userProfileAddCmdExe;
     @Resource
@@ -37,7 +37,7 @@ public class UserProfileServiceImpl implements UserProfileServiceI{
 
     @Override
     public Response addUserProfile(UserProfileAddCmd userProfileAddCmd) {
-        return  userProfileAddCmdExe.execute(userProfileAddCmd);
+        return userProfileAddCmdExe.execute(userProfileAddCmd);
     }
 
     @Override

@@ -8,7 +8,7 @@ import org.junit.Test;
 public class AppMetricTest {
 
     @Test
-    public void testAppMetricItem(){
+    public void testAppMetricItem() {
         AppMetricItem appMetricItem = new AppMetricItem();
         appMetricItem.setAppName("app1");
         appMetricItem.setCyclomaticComplexityCount(200);
@@ -20,7 +20,7 @@ public class AppMetricTest {
     }
 
     @Test
-    public void testAppMetric(){
+    public void testAppMetric() {
         AppMetricItem appMetricItem1 = new AppMetricItem();
         appMetricItem1.setAppName("app1");
         appMetricItem1.setCyclomaticComplexityCount(200);

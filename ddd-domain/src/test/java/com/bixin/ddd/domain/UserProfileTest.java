@@ -10,11 +10,8 @@ import com.bixin.ddd.domain.metrics.devquality.DevQualityMetric;
 import com.bixin.ddd.domain.metrics.techcontribution.CodeReviewMetric;
 import com.bixin.ddd.domain.metrics.techcontribution.CodeReviewMetricItem;
 import com.bixin.ddd.domain.metrics.techcontribution.ContributionMetric;
-import com.bixin.ddd.domain.metrics.techinfluence.ATAMetric;
-import com.bixin.ddd.domain.metrics.techinfluence.ATAMetricItem;
 import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.bixin.ddd.domain.metrics.weight.DevWeight;
-import com.bixin.ddd.domain.metrics.weight.QAWeight;
 import com.bixin.ddd.domain.user.UserProfile;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,7 +25,7 @@ import org.junit.Test;
 public class UserProfileTest {
 
     @Test
-    public void testCalculateScore(){
+    public void testCalculateScore() {
         UserProfile userProfile = new UserProfile();
         userProfile.setWeight(new DevWeight());
 
@@ -83,7 +80,7 @@ public class UserProfileTest {
     }
 
     @Test(expected = BizException.class)
-    public void testNPE(){
+    public void testNPE() {
         UserProfile userProfile = new UserProfile();
         userProfile.setWeight(new DevWeight());
 

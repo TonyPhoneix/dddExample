@@ -22,7 +22,7 @@ public class ContributionMetric extends MainMetric {
     private RefactoringMetric refactoringMetric;
     private MiscMetric miscMetric;
 
-    public ContributionMetric(UserProfile metricOwner){
+    public ContributionMetric(UserProfile metricOwner) {
         this.metricOwner = metricOwner;
         metricOwner.setContributionMetric(this);
         this.metricMainType = MainMetricType.TECH_CONTRIBUTION;

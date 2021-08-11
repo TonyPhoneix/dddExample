@@ -3,19 +3,20 @@ package com.bixin.ddd.domain.metrics;
 import com.alibaba.cola.domain.EntityObject;
 import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
-import com.bixin.ddd.domain.user.UserProfile;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
+import com.bixin.ddd.domain.user.UserProfile;
 import lombok.Data;
 
 /**
  * MetricItem
  * 指标项，多个指标项可以构成一个指标
+ *
  * @author Frank Zhang
  * @date 2018-07-04 1:23 PM
  */
 @Data
-public abstract class MetricItem extends EntityObject implements Measurable{
+public abstract class MetricItem extends EntityObject implements Measurable {
 
     private static Logger logger = LoggerFactory.getLogger(MetricItem.class);
 
@@ -31,12 +32,14 @@ public abstract class MetricItem extends EntityObject implements Measurable{
     @JSONField(serialize = false)
     private UserProfile metricOwner;
 
-    public void setSubMetric(SubMetric subMetric){
+    public void setSubMetric(SubMetric subMetric) {
         this.subMetric = subMetric;
         this.metricOwner = subMetric.getMetricOwner();
     }
+
     /**
      * 将度量项的转成JSON
+     *
      * @return
      */
     public String toJsonString() {

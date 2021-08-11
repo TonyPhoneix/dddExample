@@ -15,8 +15,8 @@ public class UserProfileTunnelTest {
     @Autowired
     private UserProfileMapper userProfileMapper;
 
-    public void testCRUD(){
-        String userId = Math.random()+"UserProfileTunnelTest";
+    public void testCRUD() {
+        String userId = Math.random() + "UserProfileTunnelTest";
 
         UserProfileDO userProfileDO = new UserProfileDO();
         userProfileDO.setUserId(userId);

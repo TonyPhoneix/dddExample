@@ -1,18 +1,13 @@
 package com.bixin.ddd.domain.metrics.techcontribution;
 
 import com.alibaba.cola.exception.Assert;
-import com.alibaba.cola.exception.BizException;
-import com.bixin.ddd.domain.metrics.MetricItem;
-import com.bixin.ddd.domain.metrics.techinfluence.ATAMetricItem;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.bixin.ddd.domain.metrics.MetricItem;
 import lombok.Data;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 重构指标度量项
+ *
  * @author xueliang.sxl, alisa.hsh, xiangning.lxn
  */
 @Data
@@ -42,15 +37,16 @@ public class RefactoringMetricItem extends MetricItem {
      */
     private RefactoringLevel refactoringLevel;
 
-    public RefactoringMetricItem(){
+    public RefactoringMetricItem() {
     }
 
-    public static RefactoringMetricItem valueOf(String json){
+    public static RefactoringMetricItem valueOf(String json) {
         return JSON.parseObject(json, RefactoringMetricItem.class);
     }
 
     /**
      * 计算当前度量项分数
+     *
      * @return
      */
     @Override

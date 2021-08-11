@@ -6,19 +6,20 @@ import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
 import com.bixin.ddd.domain.metrics.appquality.AppQualityMetric;
 import com.bixin.ddd.domain.metrics.devquality.DevQualityMetric;
-import com.bixin.ddd.domain.metrics.weight.Weight;
 import com.bixin.ddd.domain.metrics.techcontribution.ContributionMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
+import com.bixin.ddd.domain.metrics.weight.Weight;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
  * 员工档案
+ *
  * @author frankzhang
  */
 @Data
 @NoArgsConstructor
-public class UserProfile extends EntityObject{
+public class UserProfile extends EntityObject {
     private static Logger logger = LoggerFactory.getLogger(UserProfile.class);
 
     private String id;
@@ -43,7 +44,7 @@ public class UserProfile extends EntityObject{
     private static double MAXIMUM_SCORE = 100;
     private static double MINIMUM_SCORE = 0;
 
-    public void calculateScore(){
+    public void calculateScore() {
         calculateTechInfluenceScore();
         calculateTechContributionScore();
         calculateDevQualityMetric();
@@ -56,38 +57,38 @@ public class UserProfile extends EntityObject{
         appQualityScore = appQualityMetric.calculateScore();
     }
 
-    private void calculateDevQualityMetric(){
+    private void calculateDevQualityMetric() {
         Assert.notNull(devQualityMetric, "devQualityMetric is null, initialize it before calculating");
         devQualityScore = devQualityMetric.calculateScore();
     }
 
-    private void calculateTechInfluenceScore(){
+    private void calculateTechInfluenceScore() {
         Assert.notNull(influenceMetric, "influenceMetric is null, initialize it before calculating");
         techInfluenceScore = influenceMetric.calculateScore();
     }
 
-    private void calculateTechContributionScore(){
+    private void calculateTechContributionScore() {
         Assert.notNull(contributionMetric, "contributionMetric is null, initialize it before calculating");
         techContributionScore = contributionMetric.calculateScore();
     }
 
-    private void calculateTotalScore(){
+    private void calculateTotalScore() {
         totalScore = round(this.techInfluenceScore) * influenceMetric.getWeight()
                 + round(this.techContributionScore) * contributionMetric.getWeight()
                 + round(this.devQualityScore) * devQualityMetric.getWeight()
                 + round(this.appQualityScore) * appQualityMetric.getWeight();
     }
 
-    private double round(double score){
-        if(score > MAXIMUM_SCORE){
+    private double round(double score) {
+        if (score > MAXIMUM_SCORE) {
             score = MAXIMUM_SCORE;
-        }else if(score < MINIMUM_SCORE){
+        } else if (score < MINIMUM_SCORE) {
             score = MINIMUM_SCORE;
         }
         return score;
     }
 
-    public UserProfile(String userId){
+    public UserProfile(String userId) {
         this.userId = userId;
     }
 }

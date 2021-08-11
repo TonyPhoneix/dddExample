@@ -1,14 +1,17 @@
 package com.bixin.ddd.domain.metrics.techcontribution;
 
-import com.bixin.ddd.domain.metrics.*;
+import com.bixin.ddd.domain.metrics.MainMetric;
+import com.bixin.ddd.domain.metrics.SubMetric;
+import com.bixin.ddd.domain.metrics.SubMetricType;
 
 /**
  * 重构指标
+ *
  * @author xueliang.sxl, alisa.hsh, xiangning.lxn
  */
 public class RefactoringMetric extends SubMetric {
 
-    public RefactoringMetric(){
+    public RefactoringMetric() {
         this.subMetricType = SubMetricType.Refactoring;
     }
 
@@ -20,6 +23,6 @@ public class RefactoringMetric extends SubMetric {
 
     @Override
     public double getWeight() {
-        return  metricOwner.getWeight().getUnanimousWeight();
+        return metricOwner.getWeight().getUnanimousWeight();
     }
 }

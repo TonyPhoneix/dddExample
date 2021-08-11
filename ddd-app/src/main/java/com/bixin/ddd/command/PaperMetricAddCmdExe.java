@@ -1,12 +1,12 @@
 package com.bixin.ddd.command;
 
 import com.alibaba.cola.dto.Response;
+import com.bixin.ddd.domain.gateway.MetricGateway;
 import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.PaperMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.PaperMetricItem;
 import com.bixin.ddd.domain.user.UserProfile;
 import com.bixin.ddd.dto.PaperMetricAddCmd;
-import com.bixin.ddd.domain.gateway.MetricGateway;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

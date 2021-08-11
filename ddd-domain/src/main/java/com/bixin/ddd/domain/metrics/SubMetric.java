@@ -3,7 +3,6 @@ package com.bixin.ddd.domain.metrics;
 import com.bixin.ddd.domain.user.UserProfile;
 import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +23,11 @@ public abstract class SubMetric extends Metric {
     @Getter
     private List<MetricItem> metricItemList = new ArrayList<>();
 
-    public SubMetric(){
+    public SubMetric() {
 
     }
 
-    public void setParent(MainMetric parent){
+    public void setParent(MainMetric parent) {
         this.parent = parent;
         this.metricOwner = parent.metricOwner;
         parent.addSubMetric(this);
@@ -36,9 +35,10 @@ public abstract class SubMetric extends Metric {
 
     /**
      * 添加度量项
+     *
      * @param metricItem
      */
-    public void addMetricItem(MetricItem metricItem){
+    public void addMetricItem(MetricItem metricItem) {
         metricItemList.add(metricItem);
     }
 
@@ -49,7 +49,7 @@ public abstract class SubMetric extends Metric {
     }
 
     @Override
-    public String getCode(){
+    public String getCode() {
         return subMetricType.getMetricSubTypeCode();
     }
 
@@ -63,7 +63,7 @@ public abstract class SubMetric extends Metric {
     }
 
     @Override
-    public UserProfile getMetricOwner(){
+    public UserProfile getMetricOwner() {
         return parent.getMetricOwner();
     }
 }

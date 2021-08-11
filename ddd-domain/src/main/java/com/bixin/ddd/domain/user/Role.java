@@ -8,12 +8,12 @@ package com.bixin.ddd.domain.user;
  */
 public enum Role {
     DEV("开发"),
-    QA( "测试"),
+    QA("测试"),
     OTHER("非技术岗");
 
     public String desc;
 
-    Role(String desc){
+    Role(String desc) {
         this.desc = desc;
     }
 }

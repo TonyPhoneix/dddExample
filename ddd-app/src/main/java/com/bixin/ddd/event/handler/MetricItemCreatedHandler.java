@@ -11,8 +11,6 @@ import com.bixin.ddd.dto.RefreshScoreCmd;
 import com.bixin.ddd.dto.domainevent.MetricItemCreatedEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collections;
-
 @EventHandler
 public class MetricItemCreatedHandler implements EventHandlerI<Response, MetricItemCreatedEvent> {
 

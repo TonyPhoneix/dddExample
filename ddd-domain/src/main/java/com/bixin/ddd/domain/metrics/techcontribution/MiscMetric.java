@@ -1,14 +1,17 @@
 package com.bixin.ddd.domain.metrics.techcontribution;
 
-import com.bixin.ddd.domain.metrics.*;
+import com.bixin.ddd.domain.metrics.MainMetric;
+import com.bixin.ddd.domain.metrics.SubMetric;
+import com.bixin.ddd.domain.metrics.SubMetricType;
 
 /**
  * Miscellaneous，其他度量，任何的技术亮点都可以添加
+ *
  * @author frankzhang
  */
 public class MiscMetric extends SubMetric {
 
-    public MiscMetric(){
+    public MiscMetric() {
         this.subMetricType = SubMetricType.Misc;
     }
 

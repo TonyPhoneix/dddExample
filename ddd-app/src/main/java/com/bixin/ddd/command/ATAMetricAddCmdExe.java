@@ -1,12 +1,12 @@
 package com.bixin.ddd.command;
 
 import com.alibaba.cola.dto.Response;
+import com.bixin.ddd.domain.gateway.MetricGateway;
 import com.bixin.ddd.domain.metrics.techinfluence.ATAMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.ATAMetricItem;
 import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.bixin.ddd.domain.user.UserProfile;
 import com.bixin.ddd.dto.ATAMetricAddCmd;
-import com.bixin.ddd.domain.gateway.MetricGateway;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * @date 2019-03-01 11:42 AM
  */
 @Component
-public class ATAMetricAddCmdExe{
+public class ATAMetricAddCmdExe {
 
     @Autowired
     private MetricGateway metricGateway;

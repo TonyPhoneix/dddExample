@@ -1,13 +1,13 @@
 package com.bixin.ddd.command;
 
 import com.alibaba.cola.dto.Response;
+import com.bixin.ddd.domain.gateway.MetricGateway;
 import com.bixin.ddd.domain.metrics.techinfluence.AuthorType;
 import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.PatentMetric;
 import com.bixin.ddd.domain.metrics.techinfluence.PatentMetricItem;
 import com.bixin.ddd.domain.user.UserProfile;
 import com.bixin.ddd.dto.PatentMetricAddCmd;
-import com.bixin.ddd.domain.gateway.MetricGateway;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,7 @@ import javax.annotation.Resource;
  * @date 2019-03-03 11:41 AM
  */
 @Component
-public class PatentMetricAddCmdExe{
+public class PatentMetricAddCmdExe {
 
     @Resource
     private MetricGateway metricGateway;

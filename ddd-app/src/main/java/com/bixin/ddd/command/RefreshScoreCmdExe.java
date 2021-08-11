@@ -4,6 +4,8 @@ import com.alibaba.cola.dto.Response;
 import com.alibaba.cola.exception.Assert;
 import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
+import com.bixin.ddd.domain.gateway.MetricGateway;
+import com.bixin.ddd.domain.gateway.UserProfileGateway;
 import com.bixin.ddd.domain.metrics.SubMetric;
 import com.bixin.ddd.domain.metrics.appquality.AppMetric;
 import com.bixin.ddd.domain.metrics.appquality.AppQualityMetric;
@@ -14,15 +16,13 @@ import com.bixin.ddd.domain.metrics.techinfluence.InfluenceMetric;
 import com.bixin.ddd.domain.user.UserProfile;
 import com.bixin.ddd.dto.RefreshScoreCmd;
 import com.bixin.ddd.event.handler.MetricItemCreatedHandler;
-import com.bixin.ddd.domain.gateway.MetricGateway;
-import com.bixin.ddd.domain.gateway.UserProfileGateway;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @Component
-public class RefreshScoreCmdExe{
+public class RefreshScoreCmdExe {
     private Logger logger = LoggerFactory.getLogger(MetricItemCreatedHandler.class);
 
     @Resource
@@ -40,7 +40,7 @@ public class RefreshScoreCmdExe{
 
     private UserProfile getUserProfile(RefreshScoreCmd cmd) {
         UserProfile userProfile = userProfileGateway.getByUserId(cmd.getUserId());
-        Assert.notNull(userProfile, "There is no User Profile for "+cmd.getUserId()+" to update");
+        Assert.notNull(userProfile, "There is no User Profile for " + cmd.getUserId() + " to update");
         return userProfile;
     }
 

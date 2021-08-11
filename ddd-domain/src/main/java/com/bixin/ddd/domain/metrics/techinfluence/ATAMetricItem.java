@@ -2,13 +2,14 @@ package com.bixin.ddd.domain.metrics.techinfluence;
 
 import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
-import com.bixin.ddd.domain.metrics.MetricItem;
 import com.alibaba.fastjson.JSON;
+import com.bixin.ddd.domain.metrics.MetricItem;
 import lombok.Data;
 
 /**
  * ATAMetricItem
  * 线上分享，ATA文章指标项
+ *
  * @author Frank Zhang
  * @date 2018-07-04 3:20 PM
  */
@@ -33,7 +34,7 @@ public class ATAMetricItem extends MetricItem {
     private static double BASIC_SCORE = 0.5;
 
 
-    public ATAMetricItem(){
+    public ATAMetricItem() {
 
     }
 
@@ -45,7 +46,7 @@ public class ATAMetricItem extends MetricItem {
         this.commentCount = commentCount;
     }
 
-    public static ATAMetricItem valueOf(String json){
+    public static ATAMetricItem valueOf(String json) {
         return JSON.parseObject(json, ATAMetricItem.class);
     }
 
@@ -62,28 +63,28 @@ public class ATAMetricItem extends MetricItem {
     }
 
     private double addScoreByHitCount(double score) {
-        for(int counter = HIT_STEP_SIZE; counter <= hitCount; counter = counter + HIT_STEP_SIZE){
+        for (int counter = HIT_STEP_SIZE; counter <= hitCount; counter = counter + HIT_STEP_SIZE) {
             score = score + STEP_SCORE;
         }
         return score;
     }
 
-    private double addScoreByThumbsupCount(double score){
-        for(int counter = THUMB_UPS_STEP_SIZE; counter <= thumbsUpCount; counter = counter + THUMB_UPS_STEP_SIZE){
+    private double addScoreByThumbsupCount(double score) {
+        for (int counter = THUMB_UPS_STEP_SIZE; counter <= thumbsUpCount; counter = counter + THUMB_UPS_STEP_SIZE) {
             score = score + STEP_SCORE;
         }
         return score;
     }
 
-    private double addScoreByFavoriteCount(double score){
-        for(int counter = FAVORITE_STEP_SIZE; counter <= favoriteCount; counter = counter + FAVORITE_STEP_SIZE){
+    private double addScoreByFavoriteCount(double score) {
+        for (int counter = FAVORITE_STEP_SIZE; counter <= favoriteCount; counter = counter + FAVORITE_STEP_SIZE) {
             score = score + STEP_SCORE;
         }
         return score;
     }
 
-    private double addScoreByCommentCount(double score){
-        for(int counter = COMMENT_STEP_SIZE; counter <= commentCount; counter = counter + COMMENT_STEP_SIZE){
+    private double addScoreByCommentCount(double score) {
+        for (int counter = COMMENT_STEP_SIZE; counter <= commentCount; counter = counter + COMMENT_STEP_SIZE) {
             score = score + STEP_SCORE;
         }
         return score;

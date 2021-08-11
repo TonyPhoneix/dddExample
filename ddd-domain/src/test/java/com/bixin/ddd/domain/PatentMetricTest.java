@@ -14,10 +14,10 @@ import org.junit.Test;
 public class PatentMetricTest {
 
     @Test
-    public void testPatentMetric(){
+    public void testPatentMetric() {
         PatentMetric patentMetric = new PatentMetric(new InfluenceMetric(new UserProfile()));
-        patentMetric.addMetricItem(new PatentMetricItem("patentName","patentDesc","patentNo","sharingLink", AuthorType.FIRST_AUTHOR));
-        patentMetric.addMetricItem(new PatentMetricItem("patentName","patentDesc","patentNo","sharingLink", AuthorType.OTHER_AUTHOR));
+        patentMetric.addMetricItem(new PatentMetricItem("patentName", "patentDesc", "patentNo", "sharingLink", AuthorType.FIRST_AUTHOR));
+        patentMetric.addMetricItem(new PatentMetricItem("patentName", "patentDesc", "patentNo", "sharingLink", AuthorType.OTHER_AUTHOR));
 
         Assert.assertEquals(25, patentMetric.calculateScore(), 0.01);
 

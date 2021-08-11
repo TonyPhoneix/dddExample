@@ -1,14 +1,17 @@
 package com.bixin.ddd.domain.metrics.techcontribution;
 
-import com.bixin.ddd.domain.metrics.*;
+import com.bixin.ddd.domain.metrics.MainMetric;
+import com.bixin.ddd.domain.metrics.SubMetric;
+import com.bixin.ddd.domain.metrics.SubMetricType;
 
 /**
  * CodeReview指标
+ *
  * @author xueliang.sxl, alisa.hsh, xiangning.lxn
  */
 public class CodeReviewMetric extends SubMetric {
 
-    public CodeReviewMetric(){
+    public CodeReviewMetric() {
         this.subMetricType = SubMetricType.CodeReview;
     }
 

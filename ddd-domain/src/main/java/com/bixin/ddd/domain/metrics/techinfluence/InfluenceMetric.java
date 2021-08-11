@@ -8,6 +8,7 @@ import lombok.Data;
 /**
  * InfluenceMetric
  * 影响力指标
+ *
  * @author Frank Zhang
  * @date 2018-07-04 1:24 PM
  */
@@ -18,7 +19,7 @@ public class InfluenceMetric extends MainMetric {
     private SharingMetric sharingMetric;
     private PaperMetric paperMetric;
 
-    public InfluenceMetric(UserProfile metricOwner){
+    public InfluenceMetric(UserProfile metricOwner) {
         this.metricOwner = metricOwner;
         metricOwner.setInfluenceMetric(this);
         this.metricMainType = MainMetricType.TECH_INFLUENCE;
@@ -26,6 +27,6 @@ public class InfluenceMetric extends MainMetric {
 
     @Override
     public double getWeight() {
-        return  metricOwner.getWeight().getTechInfluenceWeight();
+        return metricOwner.getWeight().getTechInfluenceWeight();
     }
 }

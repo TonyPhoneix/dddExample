@@ -3,6 +3,7 @@ package com.bixin.ddd.gatewayimpl;
 import com.alibaba.cola.logger.Logger;
 import com.alibaba.cola.logger.LoggerFactory;
 import com.bixin.ddd.common.event.DomainEventPublisher;
+import com.bixin.ddd.convertor.MetricConvertor;
 import com.bixin.ddd.domain.gateway.MetricGateway;
 import com.bixin.ddd.domain.metrics.MainMetricType;
 import com.bixin.ddd.domain.metrics.MetricItem;
@@ -21,7 +22,6 @@ import com.bixin.ddd.gatewayimpl.rpc.AppMetricMapper;
 import com.bixin.ddd.gatewayimpl.rpc.BugMetricMapper;
 import com.bixin.ddd.gatewayimpl.rpc.dataobject.AppMetricDO;
 import com.bixin.ddd.gatewayimpl.rpc.dataobject.BugMetricDO;
-import com.bixin.ddd.convertor.MetricConvertor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

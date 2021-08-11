@@ -1,14 +1,17 @@
 package com.bixin.ddd.domain.metrics.techinfluence;
 
-import com.bixin.ddd.domain.metrics.*;
+import com.bixin.ddd.domain.metrics.MainMetric;
+import com.bixin.ddd.domain.metrics.SubMetric;
+import com.bixin.ddd.domain.metrics.SubMetricType;
 
 /**
  * 技术专利指标
+ *
  * @author xueliang.sxl
  */
 public class PatentMetric extends SubMetric {
 
-    public PatentMetric(){
+    public PatentMetric() {
         this.subMetricType = SubMetricType.Patent;
     }
 

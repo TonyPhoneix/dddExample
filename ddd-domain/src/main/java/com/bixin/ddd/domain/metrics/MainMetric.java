@@ -12,17 +12,17 @@ import java.util.List;
  * @date 2018-08-28 2:00 PM
  */
 @Data
-public abstract class MainMetric extends Metric{
+public abstract class MainMetric extends Metric {
 
 
     protected MainMetricType metricMainType;
 
     protected List<SubMetric> subMetrics = new ArrayList<>();
 
-    public MainMetric(){
+    public MainMetric() {
     }
 
-    public void addSubMetric(SubMetric metric){
+    public void addSubMetric(SubMetric metric) {
         subMetrics.add(metric);
     }
 
@@ -32,7 +32,7 @@ public abstract class MainMetric extends Metric{
     }
 
     @Override
-    public String getCode(){
+    public String getCode() {
         return metricMainType.getMetricCode();
     }
 

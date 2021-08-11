@@ -1,15 +1,12 @@
 package com.bixin.ddd.domain.metrics.techcontribution;
 
-import com.bixin.ddd.domain.metrics.MetricItem;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.bixin.ddd.domain.metrics.MetricItem;
 import lombok.Data;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 设计指标度量项
+ *
  * @author xueliang.sxl, alisa.hsh, xiangning.lxn
  */
 @Data
@@ -37,11 +34,11 @@ public class MiscMetricItem extends MetricItem {
 
     private static double OUTSTANDING_CONTRIBUTION_SCORE = 20;
 
-    public MiscMetricItem(){
+    public MiscMetricItem() {
 
     }
 
-    public MiscMetricItem(String name, String content, String docUrl, String codeUrl){
+    public MiscMetricItem(String name, String content, String docUrl, String codeUrl) {
         this.name = name;
         this.codeUrl = codeUrl;
         this.content = content;
@@ -49,12 +46,13 @@ public class MiscMetricItem extends MetricItem {
     }
 
 
-    public static MiscMetricItem valueOf(String json){
+    public static MiscMetricItem valueOf(String json) {
         return JSON.parseObject(json, MiscMetricItem.class);
     }
 
     /**
      * 计算当前度量项分数
+     *
      * @return
      */
     @Override
