@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bixin.ddd.gatewayimpl.database.mapper.WithdrawOrderDOMapper">
+  <resultMap id="BaseResultMap" type="com.bixin.ddd.gatewayimpl.database.dataobject.WithdrawOrderDO">
+    <!--@mbg.generated-->
+    <!--@Table payment_withdraw-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="withdraw_id" jdbcType="VARCHAR" property="withdrawId" />
+    <result column="account_id" jdbcType="VARCHAR" property="accountId" />
+    <result column="apply_user_id" jdbcType="VARCHAR" property="applyUserId" />
+    <result column="account_type" jdbcType="VARCHAR" property="accountType" />
+    <result column="target_amount" jdbcType="DECIMAL" property="targetAmount" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="source_amount" jdbcType="DECIMAL" property="sourceAmount" />
+    <result column="rate" jdbcType="VARCHAR" property="rate" />
+    <result column="rate_amount" jdbcType="DECIMAL" property="rateAmount" />
+    <result column="arrive_amount" jdbcType="DECIMAL" property="arriveAmount" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_card_no" jdbcType="VARCHAR" property="bankCardNo" />
+    <result column="bank_city" jdbcType="VARCHAR" property="bankCity" />
+    <result column="branch_bank" jdbcType="VARCHAR" property="branchBank" />
+    <result column="bank_account_holder" jdbcType="VARCHAR" property="bankAccountHolder" />
+    <result column="fund_channel" jdbcType="VARCHAR" property="fundChannel" />
+    <result column="approve_user" jdbcType="VARCHAR" property="approveUser" />
+    <result column="approve_remark" jdbcType="VARCHAR" property="approveRemark" />
+    <result column="approve_time" jdbcType="TIMESTAMP" property="approveTime" />
+    <result column="remit_user" jdbcType="VARCHAR" property="remitUser" />
+    <result column="remit_remark" jdbcType="VARCHAR" property="remitRemark" />
+    <result column="remit_time" jdbcType="TIMESTAMP" property="remitTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="app" jdbcType="VARCHAR" property="app" />
+    <result column="apply_uid" jdbcType="BIGINT" property="applyUid" />
+    <result column="account_uid" jdbcType="BIGINT" property="accountUid" />
+    <result column="period" jdbcType="INTEGER" property="period" />
+    <result column="amount_type" jdbcType="TINYINT" property="amountType" />
+    <result column="company_code" jdbcType="VARCHAR" property="companyCode" />
+    <result column="flag" jdbcType="TINYINT" property="flag" />
+    <result column="order_type" jdbcType="TINYINT" property="orderType" />
+    <result column="refund_time" jdbcType="TIMESTAMP" property="refundTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="remit_outer_remark" jdbcType="VARCHAR" property="remitOuterRemark" />
+    <result column="biz_type" jdbcType="VARCHAR" property="bizType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, withdraw_id, account_id, apply_user_id, account_type, target_amount, `source`, 
+    source_amount, rate, rate_amount, arrive_amount, `state`, bank_name, bank_card_no, 
+    bank_city, branch_bank, bank_account_holder, fund_channel, approve_user, approve_remark, 
+    approve_time, remit_user, remit_remark, remit_time, remark, app, apply_uid, account_uid, 
+    period, amount_type, company_code, flag, order_type, refund_time, create_time, update_time, 
+    remit_outer_remark, biz_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from payment_withdraw
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from payment_withdraw
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bixin.ddd.gatewayimpl.database.dataobject.WithdrawOrderDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into payment_withdraw (withdraw_id, account_id, apply_user_id, 
+      account_type, target_amount, `source`, 
+      source_amount, rate, rate_amount, 
+      arrive_amount, `state`, bank_name, 
+      bank_card_no, bank_city, branch_bank, 
+      bank_account_holder, fund_channel, approve_user, 
+      approve_remark, approve_time, remit_user, 
+      remit_remark, remit_time, remark, 
+      app, apply_uid, account_uid, 
+      period, amount_type, company_code, 
+      flag, order_type, refund_time, 
+      create_time, update_time, remit_outer_remark, 
+      biz_type)
+    values (#{withdrawId,jdbcType=VARCHAR}, #{accountId,jdbcType=VARCHAR}, #{applyUserId,jdbcType=VARCHAR}, 
+      #{accountType,jdbcType=VARCHAR}, #{targetAmount,jdbcType=DECIMAL}, #{source,jdbcType=VARCHAR}, 
+      #{sourceAmount,jdbcType=DECIMAL}, #{rate,jdbcType=VARCHAR}, #{rateAmount,jdbcType=DECIMAL}, 
+      #{arriveAmount,jdbcType=DECIMAL}, #{state,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, 
+      #{bankCardNo,jdbcType=VARCHAR}, #{bankCity,jdbcType=VARCHAR}, #{branchBank,jdbcType=VARCHAR}, 
+      #{bankAccountHolder,jdbcType=VARCHAR}, #{fundChannel,jdbcType=VARCHAR}, #{approveUser,jdbcType=VARCHAR}, 
+      #{approveRemark,jdbcType=VARCHAR}, #{approveTime,jdbcType=TIMESTAMP}, #{remitUser,jdbcType=VARCHAR}, 
+      #{remitRemark,jdbcType=VARCHAR}, #{remitTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, 
+      #{app,jdbcType=VARCHAR}, #{applyUid,jdbcType=BIGINT}, #{accountUid,jdbcType=BIGINT}, 
+      #{period,jdbcType=INTEGER}, #{amountType,jdbcType=TINYINT}, #{companyCode,jdbcType=VARCHAR}, 
+      #{flag,jdbcType=TINYINT}, #{orderType,jdbcType=TINYINT}, #{refundTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{remitOuterRemark,jdbcType=VARCHAR}, 
+      #{bizType,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.bixin.ddd.gatewayimpl.database.dataobject.WithdrawOrderDO" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into payment_withdraw
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="withdrawId != null and withdrawId != ''">
+        withdraw_id,
+      </if>
+      <if test="accountId != null and accountId != ''">
+        account_id,
+      </if>
+      <if test="applyUserId != null and applyUserId != ''">
+        apply_user_id,
+      </if>
+      <if test="accountType != null and accountType != ''">
+        account_type,
+      </if>
+      <if test="targetAmount != null">
+        target_amount,
+      </if>
+      <if test="source != null and source != ''">
+        `source`,
+      </if>
+      <if test="sourceAmount != null">
+        source_amount,
+      </if>
+      <if test="rate != null and rate != ''">
+        rate,
+      </if>
+      <if test="rateAmount != null">
+        rate_amount,
+      </if>
+      <if test="arriveAmount != null">
+        arrive_amount,
+      </if>
+      <if test="state != null and state != ''">
+        `state`,
+      </if>
+      <if test="bankName != null and bankName != ''">
+        bank_name,
+      </if>
+      <if test="bankCardNo != null and bankCardNo != ''">
+        bank_card_no,
+      </if>
+      <if test="bankCity != null and bankCity != ''">
+        bank_city,
+      </if>
+      <if test="branchBank != null and branchBank != ''">
+        branch_bank,
+      </if>
+      <if test="bankAccountHolder != null and bankAccountHolder != ''">
+        bank_account_holder,
+      </if>
+      <if test="fundChannel != null and fundChannel != ''">
+        fund_channel,
+      </if>
+      <if test="approveUser != null and approveUser != ''">
+        approve_user,
+      </if>
+      <if test="approveRemark != null and approveRemark != ''">
+        approve_remark,
+      </if>
+      <if test="approveTime != null">
+        approve_time,
+      </if>
+      <if test="remitUser != null and remitUser != ''">
+        remit_user,
+      </if>
+      <if test="remitRemark != null and remitRemark != ''">
+        remit_remark,
+      </if>
+      <if test="remitTime != null">
+        remit_time,
+      </if>
+      <if test="remark != null and remark != ''">
+        remark,
+      </if>
+      <if test="app != null and app != ''">
+        app,
+      </if>
+      <if test="applyUid != null">
+        apply_uid,
+      </if>
+      <if test="accountUid != null">
+        account_uid,
+      </if>
+      <if test="period != null">
+        period,
+      </if>
+      <if test="amountType != null">
+        amount_type,
+      </if>
+      <if test="companyCode != null and companyCode != ''">
+        company_code,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="refundTime != null">
+        refund_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="remitOuterRemark != null and remitOuterRemark != ''">
+        remit_outer_remark,
+      </if>
+      <if test="bizType != null and bizType != ''">
+        biz_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="withdrawId != null and withdrawId != ''">
+        #{withdrawId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountId != null and accountId != ''">
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserId != null and applyUserId != ''">
+        #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null and accountType != ''">
+        #{accountType,jdbcType=VARCHAR},
+      </if>
+      <if test="targetAmount != null">
+        #{targetAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="source != null and source != ''">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceAmount != null">
+        #{sourceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="rate != null and rate != ''">
+        #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateAmount != null">
+        #{rateAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="arriveAmount != null">
+        #{arriveAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null and state != ''">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null and bankName != ''">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null and bankCardNo != ''">
+        #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null and bankCity != ''">
+        #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="branchBank != null and branchBank != ''">
+        #{branchBank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountHolder != null and bankAccountHolder != ''">
+        #{bankAccountHolder,jdbcType=VARCHAR},
+      </if>
+      <if test="fundChannel != null and fundChannel != ''">
+        #{fundChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="approveUser != null and approveUser != ''">
+        #{approveUser,jdbcType=VARCHAR},
+      </if>
+      <if test="approveRemark != null and approveRemark != ''">
+        #{approveRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="approveTime != null">
+        #{approveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitUser != null and remitUser != ''">
+        #{remitUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remitRemark != null and remitRemark != ''">
+        #{remitRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="remitTime != null">
+        #{remitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null and remark != ''">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="app != null and app != ''">
+        #{app,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUid != null">
+        #{applyUid,jdbcType=BIGINT},
+      </if>
+      <if test="accountUid != null">
+        #{accountUid,jdbcType=BIGINT},
+      </if>
+      <if test="period != null">
+        #{period,jdbcType=INTEGER},
+      </if>
+      <if test="amountType != null">
+        #{amountType,jdbcType=TINYINT},
+      </if>
+      <if test="companyCode != null and companyCode != ''">
+        #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="refundTime != null">
+        #{refundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitOuterRemark != null and remitOuterRemark != ''">
+        #{remitOuterRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null and bizType != ''">
+        #{bizType,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bixin.ddd.gatewayimpl.database.dataobject.WithdrawOrderDO">
+    <!--@mbg.generated-->
+    update payment_withdraw
+    <set>
+      <if test="withdrawId != null and withdrawId != ''">
+        withdraw_id = #{withdrawId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountId != null and accountId != ''">
+        account_id = #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserId != null and applyUserId != ''">
+        apply_user_id = #{applyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null and accountType != ''">
+        account_type = #{accountType,jdbcType=VARCHAR},
+      </if>
+      <if test="targetAmount != null">
+        target_amount = #{targetAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="source != null and source != ''">
+        `source` = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceAmount != null">
+        source_amount = #{sourceAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="rate != null and rate != ''">
+        rate = #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="rateAmount != null">
+        rate_amount = #{rateAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="arriveAmount != null">
+        arrive_amount = #{arriveAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null and state != ''">
+        `state` = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null and bankName != ''">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCardNo != null and bankCardNo != ''">
+        bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCity != null and bankCity != ''">
+        bank_city = #{bankCity,jdbcType=VARCHAR},
+      </if>
+      <if test="branchBank != null and branchBank != ''">
+        branch_bank = #{branchBank,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccountHolder != null and bankAccountHolder != ''">
+        bank_account_holder = #{bankAccountHolder,jdbcType=VARCHAR},
+      </if>
+      <if test="fundChannel != null and fundChannel != ''">
+        fund_channel = #{fundChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="approveUser != null and approveUser != ''">
+        approve_user = #{approveUser,jdbcType=VARCHAR},
+      </if>
+      <if test="approveRemark != null and approveRemark != ''">
+        approve_remark = #{approveRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="approveTime != null">
+        approve_time = #{approveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitUser != null and remitUser != ''">
+        remit_user = #{remitUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remitRemark != null and remitRemark != ''">
+        remit_remark = #{remitRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="remitTime != null">
+        remit_time = #{remitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null and remark != ''">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="app != null and app != ''">
+        app = #{app,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUid != null">
+        apply_uid = #{applyUid,jdbcType=BIGINT},
+      </if>
+      <if test="accountUid != null">
+        account_uid = #{accountUid,jdbcType=BIGINT},
+      </if>
+      <if test="period != null">
+        period = #{period,jdbcType=INTEGER},
+      </if>
+      <if test="amountType != null">
+        amount_type = #{amountType,jdbcType=TINYINT},
+      </if>
+      <if test="companyCode != null and companyCode != ''">
+        company_code = #{companyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=TINYINT},
+      </if>
+      <if test="orderType != null">
+        order_type = #{orderType,jdbcType=TINYINT},
+      </if>
+      <if test="refundTime != null">
+        refund_time = #{refundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remitOuterRemark != null and remitOuterRemark != ''">
+        remit_outer_remark = #{remitOuterRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="bizType != null and bizType != ''">
+        biz_type = #{bizType,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bixin.ddd.gatewayimpl.database.dataobject.WithdrawOrderDO">
+    <!--@mbg.generated-->
+    update payment_withdraw
+    set withdraw_id = #{withdrawId,jdbcType=VARCHAR},
+      account_id = #{accountId,jdbcType=VARCHAR},
+      apply_user_id = #{applyUserId,jdbcType=VARCHAR},
+      account_type = #{accountType,jdbcType=VARCHAR},
+      target_amount = #{targetAmount,jdbcType=DECIMAL},
+      `source` = #{source,jdbcType=VARCHAR},
+      source_amount = #{sourceAmount,jdbcType=DECIMAL},
+      rate = #{rate,jdbcType=VARCHAR},
+      rate_amount = #{rateAmount,jdbcType=DECIMAL},
+      arrive_amount = #{arriveAmount,jdbcType=DECIMAL},
+      `state` = #{state,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_card_no = #{bankCardNo,jdbcType=VARCHAR},
+      bank_city = #{bankCity,jdbcType=VARCHAR},
+      branch_bank = #{branchBank,jdbcType=VARCHAR},
+      bank_account_holder = #{bankAccountHolder,jdbcType=VARCHAR},
+      fund_channel = #{fundChannel,jdbcType=VARCHAR},
+      approve_user = #{approveUser,jdbcType=VARCHAR},
+      approve_remark = #{approveRemark,jdbcType=VARCHAR},
+      approve_time = #{approveTime,jdbcType=TIMESTAMP},
+      remit_user = #{remitUser,jdbcType=VARCHAR},
+      remit_remark = #{remitRemark,jdbcType=VARCHAR},
+      remit_time = #{remitTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      app = #{app,jdbcType=VARCHAR},
+      apply_uid = #{applyUid,jdbcType=BIGINT},
+      account_uid = #{accountUid,jdbcType=BIGINT},
+      period = #{period,jdbcType=INTEGER},
+      amount_type = #{amountType,jdbcType=TINYINT},
+      company_code = #{companyCode,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=TINYINT},
+      order_type = #{orderType,jdbcType=TINYINT},
+      refund_time = #{refundTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      remit_outer_remark = #{remitOuterRemark,jdbcType=VARCHAR},
+      biz_type = #{bizType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

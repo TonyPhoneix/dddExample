@@ -17,7 +17,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.bixin</groupId>
-			<artifactId>ddd-client</artifactId>
+			<artifactId>ddd-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<!-- COLA Framework End-->
@@ -32,6 +32,10 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
 		</dependency>
 	</dependencies>
 

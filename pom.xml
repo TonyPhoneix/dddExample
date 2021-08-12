@@ -18,11 +18,11 @@
 
     <modules>
         <module>ddd-app</module>
-        <module>ddd-client</module>
-        <module>ddd-controller</module>
+        <module>ddd-api</module>
         <module>ddd-domain</module>
         <module>ddd-infrastructure</module>
         <module>start</module>
+        <module>ddd-adapter</module>
     </modules>
 
     <dependencyManagement>

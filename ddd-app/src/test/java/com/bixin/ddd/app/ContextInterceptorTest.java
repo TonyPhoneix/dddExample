@@ -1,7 +1,7 @@
 package com.bixin.ddd.app;
 
-import com.bixin.ddd.dto.UserProfileAddCmd;
-import com.bixin.ddd.dto.clientobject.UserProfileCO;
+import com.bixin.ddd.request.UserProfileAddCmd;
+import com.bixin.ddd.request.clientobject.UserProfileCO;
 import org.junit.Test;
 
 /**

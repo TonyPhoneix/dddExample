@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.bixin</groupId>
-            <artifactId>ddd-client</artifactId>
+            <artifactId>ddd-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
